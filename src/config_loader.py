@@ -6,7 +6,6 @@ import sys
 from pathlib import Path
 
 # route path from logs
-# ====================
 PATH_ROOT = (Path(__file__).resolve().parent.parent)
 PATH_ROOT_STR =str(PATH_ROOT)
 
@@ -16,7 +15,6 @@ if (PATH_ROOT_STR not in sys.path):
 from logs.log_master import LogMaster
 from src.utils.loading import fake_loading
 
-# ====================
 # LOGGER
 LOG_FILE = PATH_ROOT / "logs" / "local" / "mdi.log"
 logger = LogMaster(log_file=LOG_FILE)
@@ -29,7 +27,6 @@ ROUTE_CONFIG_DEMO = (PATH_ROOT / "config" / "public" / "example_config.json")
 SHORT_ROUTE_CONFIG = ("/" + ROUTE_CONFIG.relative_to(PATH_ROOT.parent).as_posix())
 SHORT_ROUTE_CONFIG_DEMO = ("/" + ROUTE_CONFIG_DEMO.relative_to(PATH_ROOT.parent).as_posix())
 
-# ====================
 # LOCAL
 def load_config():
     
@@ -70,7 +67,6 @@ def load_config():
         
     return None
 
-# ====================
 # DEMO
 def load_demo_config():
     fake_loading("demo")
