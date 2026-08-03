@@ -21,7 +21,7 @@ def fake_loading(environment="local"):
     }
     
     environment_key = environment.lower()
-    environment_name = environments.get(environment.lower(),"UNKNOWN",)
+    environment_name = environments.get(environment_key,"UNKNOWN",)
     environment_color = environment_colors.get(environment_key,RESET,)
     
     loading_frames = [
