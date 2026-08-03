@@ -18,7 +18,8 @@ from src.utils.loading import fake_loading
 
 # ====================
 # LOGGER
-logger = LogMaster()
+LOG_FILE = PATH_ROOT / "logs" / "local" / "mdi.log"
+logger = LogMaster(log_file=LOG_FILE)
 
 # CONFIG. FILES
 ROUTE_CONFIG = (PATH_ROOT / "config" / "local" / "config.json")
@@ -31,7 +32,9 @@ SHORT_ROUTE_CONFIG_DEMO = ("/" + ROUTE_CONFIG_DEMO.relative_to(PATH_ROOT.parent)
 # ====================
 # LOCAL
 def load_config():
+    
     fake_loading("local")
+    
     # FILE FOUND
     try:
         with ROUTE_CONFIG.open("r", encoding="utf-8") as file:
