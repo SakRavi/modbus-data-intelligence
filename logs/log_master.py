@@ -19,7 +19,6 @@ class LogMaster:
     
     def __init__(self, log_file="logs/local/mdi.log"):
         
-        # ====================
         # FIRST LEVEL (MASTER)
         self.levels = {
             "info": "INFO",
@@ -35,7 +34,6 @@ class LogMaster:
             "crit": self.CRITICAL,
             "error": self.RED,
         }
-        # ====================
         # SUB LEVEL DEMO/LOCAL
         self.sublevels1 = {
             "demo": "DEMO",
@@ -45,7 +43,6 @@ class LogMaster:
             "demo": self.PURPLE,
             "local": self.GREEN,
         }
-        # ====================
         # SUB LEVEL (MDI)
         # !NOTE: CHANGE THE SUBLEVELS ACCORDING TO THE PROJECT NEEDS
         self.sublevels2 = {
@@ -55,19 +52,16 @@ class LogMaster:
             "battery": "BATTERY",
             "collector": "COLLECTOR",
         }
-        # ====================
         # .LOG FILE
         self.log_file = Path(log_file)
         self.log_file.parent.mkdir(parents=True, exist_ok=True)
         
     def log(self,level,sublevel1,sublevel2,message):
         
-        # ====================
         # TIMESTAMP LOG
         
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # noqa: DTZ005
         
-        # ====================
         # LEVELS AND SUBLEVELS
         
         level_key = level.lower()
@@ -80,7 +74,6 @@ class LogMaster:
         level_color = self.level_colors.get(level_key,self.RESET,)
         sublevel1_color = self.sublevels1_colors.get(sublevel1_key,self.RESET,)
         
-        # ====================
         # TERMINAL PRINT WITH COLORS
         
         terminal_message = (
@@ -91,7 +84,6 @@ class LogMaster:
             f"{message}"
         )
         
-        # ====================
         # FILE CLEAN
         
         file_message = (
