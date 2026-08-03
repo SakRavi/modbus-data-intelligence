@@ -48,8 +48,8 @@ def load_config():
         logger.log(
             "error","local","config",
             (
-                "Invalid JSON syntax",
-                f"at line{error.lineno},column{error.colno}:",
+                "Invalid JSON syntax"
+                f"at line{error.lineno},column{error.colno}:"
                 f"{error.msg}"
                 ),
             )
@@ -88,8 +88,8 @@ def load_demo_config():
         logger.log(
             "error","demo","config",
             (
-                "Invalid JSON syntax",
-                f"at line{error.lineno},column{error.colno}:",
+                "Invalid JSON syntax"
+                f"at line{error.lineno},column{error.colno}:"
                 f"{error.msg}"
                 ),
             )
