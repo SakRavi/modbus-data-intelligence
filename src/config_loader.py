@@ -8,8 +8,10 @@ from pathlib import Path
 # route path from logs
 # ====================
 PATH_ROOT = (Path(__file__).resolve().parent.parent)
-if (PATH_ROOT not in sys.path):
-    sys.path.append(str(PATH_ROOT))
+PATH_ROOT_STR =str(PATH_ROOT)
+
+if (PATH_ROOT_STR not in sys.path):
+    sys.path.append(PATH_ROOT_STR)
 
 from logs.log_master import LogMaster
 from src.utils.loading import fake_loading
