@@ -87,7 +87,7 @@ class LogMaster:
             f"[{timestamp}] "
             f"[{level_color}{level_name:<5}{self.RESET}] "
             f"[{sublevel1_color}{sublevel1_name:<5}{self.RESET}] "
-            f"[{sublevel2_name}] "
+            f"[{sublevel2_name:<9}] "
             f"{message}"
         )
         
