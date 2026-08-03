@@ -1,0 +1,65 @@
+# ENTORNOS VIRTUALES
+# ====================
+.venv/
+venv/
+env/
+
+# CACHÉS Y COMPILADOS PYTHON
+# ====================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+
+# VARIABLES Y SECRETOS
+# ====================
+.env
+.env.*
+!.env.example
+
+# EMPAQUETADO PYTHON
+# ====================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# COBERTURA DE TESTS
+# ====================
+.coverage
+htmlcov/
+
+# CONTENIDO PRIVADO Y LOCAL
+# ====================
+**/local/*
+!**/local/.gitkeep
+
+# ARCHIVOS TEMPORALES SQLITE
+# ====================
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite3-journal
+*.db-wal
+*.db-shm
+*.db-journal
+
+# EDITORES
+# ====================
+.vscode/
+.idea/
+
+# SISTEMA OPERATIVO
+# ====================
+.DS_Store
+Thumbs.db
+
+# ARCHIVOS TEMPORALES
+# ====================
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
