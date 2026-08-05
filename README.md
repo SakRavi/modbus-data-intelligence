@@ -12,6 +12,7 @@ data analysis, and future machine-learning applications.
 
       - [✅] Reusable log_master.
       - [✅] Local JSON configuration loader.
+      - [✅] Modbus connect Local / Demo
       - [  ] Main cerbo collector.
       - [  ] Classic-style UI/GUI.
 

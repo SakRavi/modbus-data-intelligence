@@ -1,5 +1,5 @@
 {
-    "ip_cerbo":"192.168.0.00",
+    "ip_cerbo":"192.168.1.100",
     "port_cerbo": 502,
     "local_time": "Europe/Madrid",
     "interval_seconds": 1.0
