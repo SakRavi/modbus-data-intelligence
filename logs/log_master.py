@@ -45,10 +45,13 @@ class LogMaster:
         self.sublevels1 = {
             "demo": "DEMO",
             "local": "LOCAL",
+            "system": "SYSTEM",
+
         }
         self.sublevels1_colors = {
             "demo": self.PURPLE,
             "local": self.GREEN,
+            "system": self.YELLOW,
         }
         # SUB LEVEL (MDI)
         # !NOTE: CHANGE THE SUBLEVELS ACCORDING TO THE PROJECT NEEDS
@@ -59,6 +62,7 @@ class LogMaster:
             "database": "DATABASE",
             "battery": "BATTERY",
             "collector": "COLLECTOR",
+            "selector": "SELECTOR"
         }
         # .LOG FILE
 
@@ -88,7 +92,7 @@ class LogMaster:
         terminal_message = (
             f"[{timestamp}] "
             f"[{level_color}{level_name:<5}{self.RESET}] "
-            f"[{sublevel1_color}{sublevel1_name:<5}{self.RESET}] "
+            f"[{sublevel1_color}{sublevel1_name:<6}{self.RESET}] "
             f"[{sublevel2_name:<9}] "
             f"{message}"
         )

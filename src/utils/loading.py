@@ -60,7 +60,7 @@ def fake_loading(environment="local"):
             print(
                 f"\r[{timestamp}] "
                 f"[{GREEN}INFO {RESET}] "
-                f"[{environment_color}{environment_name:<5}{RESET}] "
+                f"[{environment_color}{environment_name:<6}{RESET}] "
                 f"[{environment_name:<9}] "
                 f"{frame}",
                 end="",
@@ -117,7 +117,7 @@ def fake_loading_tqdm(environment="local"):
     prefix = (
         f"[{timestamp}] "
         f"[{GREEN}INFO {RESET}] "
-        f"[{environment_color}{environment_name:<5}{RESET}] "
+        f"[{environment_color}{environment_name:<6}{RESET}] "
         f"[LOADING  ]"
     )
 

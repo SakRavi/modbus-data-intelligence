@@ -274,7 +274,24 @@ class ModbusDemoConnection:
 #endregion
 
 #region CONNECTION SELECTOR
-# ! PENDIENTE DE CREACION
+
+def select_connection(connection_mode: int, logger):
+
+    try:
+        if connection_mode == 1:
+            logger.log("info","demo","selector","DEMO connection mode selected")
+            return ModbusDemoConnection(logger=logger)
+
+        elif connection_mode == 2:
+            logger.log("info","local","selector","LOCAL connection mode selected")
+            return ModbusLocalConnection(logger=logger)
+
+        else:
+            raise ValueError("Use 1 for DEMO or 2 for LOCAL.")
+
+    except (TypeError, ValueError) as error:
+        logger.log("error","system","selector",f"connection mode selection failed: {error}")
+        raise
 #endregion
 
 #region MANUAL TEST
@@ -282,10 +299,18 @@ if __name__ == "__main__":
 
     logger = LogMaster()
 
-    connection = ModbusLocalConnection(logger=logger) # cambiar ModbusDemoConnection x ModbusLocalConnection
+    connection_mode = int(
+        input("Select connection mode [1 DEMO / 2 LOCAL]: ")
+    )
+
+    connection = select_connection(
+        connection_mode=connection_mode,
+        logger=logger
+    )
 
     connection.create_client()
     connection.open_connection()
     connection.check_connection()
     connection.close_connection()
+
 #endregion

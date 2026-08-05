@@ -40,7 +40,7 @@ data analysis, and future machine-learning applications.
 
 ## Current status
 
-- Version: `0.0.2`
+- Version: `0.0.3`
 - Status: `UNDER DEVELOPMENT`
 - Platform: Ubuntu / Linux / win
 - Communication: Modbus TCP

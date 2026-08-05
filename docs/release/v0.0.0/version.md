@@ -52,13 +52,16 @@ Status: COMPLETED
 
 ### v0.0.3 — Connection selector
 
-Status: PENDING
+Status: COMPLETED
 
-- [  ] Select LOCAL or DEMO mode.
-- [  ] Return one common connection object.
-- [  ] Prevent simultaneous connection modes.
-- [  ] Validate unknown connection modes.
-- [  ] Integrate selector with the future application.
+- [✅] Select LOCAL or DEMO mode.
+- [✅] Return one common connection object.
+- [✅] Prevent unknown connection modes.
+- [✅] Validate DEMO selection.
+- [✅] Validate LOCAL selection.
+- [✅] Register selector events through LogMaster.
+- [✅] Add neutral SYSTEM log environment.
+- [✅] Prepared for terminal debug mode and future PySide6 selection.
 
 ---
 
