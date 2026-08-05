@@ -1,10 +1,24 @@
 # MODBUS_CONNECT
 
-#region IMPORTS
-from config_loader import load_config, load_demo_config
+#region IMPORTS PATH
+import sys
+from pathlib import Path
+
+#endregion
+
+#region PROJECTO PATH 
+PATH_ROOT = Path(__file__).resolve().parents[2]
+PATH_ROOT_STR = str(PATH_ROOT)
+
+if PATH_ROOT_STR not in sys.path:
+    sys.path.insert(0, PATH_ROOT_STR)
+#endregion
+
+#region IMPORTS MODBUS
 from pymodbus.client import ModbusTcpClient
 
 from logs.log_master import LogMaster
+from src.tools.config_loader import load_config, load_demo_config
 from src.utils.loading import fake_loading_tqdm
 
 #endregion
@@ -298,19 +312,35 @@ def select_connection(connection_mode: int, logger):
 if __name__ == "__main__":
 
     logger = LogMaster()
+    connection = None
 
-    connection_mode = int(
-        input("Select connection mode [1 DEMO / 2 LOCAL]: ")
-    )
+    try:
+        connection_mode = int(
+            input("Select connection mode [1 DEMO / 2 LOCAL]: ")
+        )
 
-    connection = select_connection(
-        connection_mode=connection_mode,
-        logger=logger
-    )
+        connection = select_connection(
+            connection_mode=connection_mode,
+            logger=logger
+        )
 
-    connection.create_client()
-    connection.open_connection()
-    connection.check_connection()
-    connection.close_connection()
+        connection.create_client()
+        connection.open_connection()
+        connection.check_connection()
+
+    except ValueError:
+        pass
+
+    except KeyboardInterrupt:
+        logger.log(
+            "warn",
+            "system",
+            "selector",
+            "Manual connection test cancelled."
+        )
+
+    finally:
+        if connection is not None:
+            connection.close_connection()
 
 #endregion

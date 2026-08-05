@@ -60,7 +60,7 @@ def load_config():
 
     # INVALID SYNTAX
     except json.JSONDecodeError as error:
-        logger.log("error","local","config","Invalid JSON syntax",f"at line{error.lineno},column{error.colno}: {error.msg}",)
+        logger.log("error","local","config",f"Invalid JSON syntax at line{error.lineno},column{error.colno}: {error.msg}",)
 
     # INVALID PERMISSION FILE
     except PermissionError:
@@ -95,7 +95,7 @@ def load_demo_config():
 
     # INVALID SYNTAX
     except json.JSONDecodeError as error:
-        logger.log("error","demo","config","Invalid JSON syntax",f"at line{error.lineno},column{error.colno}: {error.msg}",)
+        logger.log("error","demo","config",f"Invalid JSON syntax at line{error.lineno},column{error.colno}: {error.msg}",)
 
     # INVALID PERMISSION FILE
     except PermissionError:
