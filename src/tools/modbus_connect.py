@@ -1,34 +1,11 @@
-# MODBUS_CONNECT
-
-#region IMPORTS PATH
-import sys
-from pathlib import Path
-
-#endregion
-
-#region PROJECTO PATH 
-PATH_ROOT = Path(__file__).resolve().parents[2]
-PATH_ROOT_STR = str(PATH_ROOT)
-
-if PATH_ROOT_STR not in sys.path:
-    sys.path.insert(0, PATH_ROOT_STR)
-#endregion
-
-#region IMPORTS MODBUS
 from pymodbus.client import ModbusTcpClient
 
 from logs.log_master import LogMaster
 from src.tools.config_loader import load_config, load_demo_config
 from src.utils.loading import fake_loading_tqdm
 
-#endregion
-
-#region CONSTANTS
 TIMEOUT = 3
 RETRIES = 3
-#endregion
-
-#region LOCAL CONNECTION
 class ModbusLocalConnection:
 
     def __init__(self,logger):
@@ -41,8 +18,8 @@ class ModbusLocalConnection:
     def load_connection_config(self):
         try:
             config = load_config()
-            self.host = config["ip_cerbo"]
-            self.port = int(config["port_cerbo"])
+            self.host = config["modbus"]["ip_cerbo"]
+            self.port = int(config["modbus"]["port_cerbo"])
             self.logger.log("debug","local","config","Modbus connection configuration loaded...")
             return True
 
@@ -145,9 +122,6 @@ class ModbusLocalConnection:
 
             self.logger.log("error","local","modbus",f"Modbus connection closing error: {type(error).__name__}: {error}.")
             return False
-#endregion
-
-#region DEMO CONNECTION
 class DemoModbusClient:
 
     def __init__(self, host, port, timeout, retries):
@@ -163,8 +137,6 @@ class DemoModbusClient:
 
     def close(self):
         self.connected = False
-
-
 class ModbusDemoConnection:
 
     def __init__(self, logger):
@@ -177,8 +149,8 @@ class ModbusDemoConnection:
     def load_connection_config(self):
         try:
             config = load_demo_config()
-            self.host = config["ip_cerbo"]
-            self.port = int(config["port_cerbo"])
+            self.host = config["modbus"]["ip_cerbo"]
+            self.port = int(config["modbus"]["port_cerbo"])
             self.logger.log("debug","demo","config","Modbus connection configuration loaded...")
             return True
 
@@ -285,9 +257,6 @@ class ModbusDemoConnection:
             self.client = None
             self.logger.log("error","demo","modbus",f"Modbus connection closing error: {type(error).__name__}: {error}.")
             return False
-#endregion
-
-#region CONNECTION SELECTOR
 
 def select_connection(connection_mode: int, logger):
 
@@ -306,9 +275,7 @@ def select_connection(connection_mode: int, logger):
     except (TypeError, ValueError) as error:
         logger.log("error","system","selector",f"connection mode selection failed: {error}")
         raise
-#endregion
 
-#region MANUAL TEST
 if __name__ == "__main__":
 
     logger = LogMaster()
@@ -332,15 +299,8 @@ if __name__ == "__main__":
         pass
 
     except KeyboardInterrupt:
-        logger.log(
-            "warn",
-            "system",
-            "selector",
-            "Manual connection test cancelled."
-        )
-
+        logger.log("warn","system","selector","Manual connection test cancelled.")
+        
     finally:
         if connection is not None:
             connection.close_connection()
-
-#endregion

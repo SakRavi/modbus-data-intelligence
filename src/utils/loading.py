@@ -1,6 +1,3 @@
-# FAKE LOAD VISUAL
-# ! only fake
-#region IMPORTS
 import random
 import sys
 import time
@@ -8,15 +5,10 @@ from datetime import datetime
 
 import tqdm
 
-#endregion
-
-#region ANSI COLORS
 RESET = "\033[0m"
 GREEN = "\033[92m"
 PURPLE = "\033[95m"
-#endregion
 
-#region FAKE FUNCTION
 def fake_loading(environment="local"):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # noqa: DTZ005
 
@@ -70,9 +62,7 @@ def fake_loading(environment="local"):
             time.sleep(0.1) # SIMULATE LOADING TIME (FAKE)
 
     print()
-# endregion
 
-#region TQDM LOADER
 def loading_tqdm():
 
     pbar = tqdm.tqdm(
@@ -86,9 +76,7 @@ def loading_tqdm():
         pbar.update(10)
 
     pbar.close()
-#endregion
 
-#region FAKE TQDM
 def fake_loading_tqdm(environment="local"):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # noqa: DTZ005
 
@@ -135,12 +123,9 @@ def fake_loading_tqdm(environment="local"):
         pbar.update(10)
 
     pbar.close()
-# endregion
 
-#region MANUAL TEST
 if __name__ == "__main__":
     fake_loading(environment="local")
     fake_loading(environment="demo")
     fake_loading_tqdm(environment="local")
     fake_loading_tqdm(environment="demo")
-#endregion

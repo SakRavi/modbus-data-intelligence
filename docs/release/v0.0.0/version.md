@@ -67,27 +67,26 @@ Status: COMPLETED
 
 ### v0.0.4 — DEMO collector
 
-Status: PENDING
+Status: COMPLETED
 
-- [  ] Create `DemoCollector`.
-- [  ] Open DEMO connection.
-- [  ] Acquire one snapshot.
-- [  ] Generate simulated register values.
-- [  ] Record collector events.
-- [  ] Close the collector safely.
+- [✅] Create `snap_collector`.
+- [✅] Create `registers_victron.json`
+- [✅] Acquire one snapshot.
+- [✅] Generate simulated register values.
+- [✅] Record collector events.
+- [✅] Close the collector safely.
 
 ---
 
 ### v0.0.5 — Snapshot system
 
-Status: PENDING
+Status: COMPLETED
 
-- [  ] Define snapshot structure.
-- [  ] Add timestamp.
-- [  ] Store raw Modbus registers.
-- [  ] Convert raw register values.
-- [  ] Validate incomplete snapshots.
-- [  ] Support LOCAL and DEMO snapshots.
+- [✅] Define snapshot structure.
+- [✅] Add timestamp.
+- [✅] Convert raw register values.
+- [✅] Read raw Modbus registers.
+- [✅] Support LOCAL and DEMO snapshots.
 
 ---
 

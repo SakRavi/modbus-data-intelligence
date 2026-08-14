@@ -1,0 +1,79 @@
+{
+    "battery_voltage": {
+        "address": 259,
+        "service": "battery",
+        "type": "uint16",
+        "scale": 100,
+        "unit": "V"
+    },
+    "battery_current": {
+        "address": 261,
+        "service": "battery",
+        "type": "int16",
+        "scale": 10,
+        "unit": "A"
+    },
+    "battery_soc": {
+        "address": 266,
+        "service": "battery",
+        "type": "uint16",
+        "scale": 10,
+        "unit": "%"
+    },
+    "charges_cycle": {
+        "address": 284,
+        "service": "battery",
+        "type": "uint16",
+        "scale": 1,
+        "unit": "times"
+    },
+    "full_discharges": {
+        "address": 285,
+        "service": "battery",
+        "type": "uint16",
+        "scale": 1,
+        "unit": "times"
+    },
+    "solar_voltage": {
+        "address": 776,
+        "service": "solar",
+        "type": "uint16",
+        "scale": 100,
+        "unit": "V"
+    },
+    "solar_current": {
+        "address": 777,
+        "service": "solar",
+        "type": "int16",
+        "scale": 10,
+        "unit": "A"
+    },
+    "solar_power": {
+        "address": 789,
+        "service": "solar",
+        "type": "uint16",
+        "scale": 10,
+        "unit": "W"
+    },
+    "solar_yield":{
+        "address":784,
+        "service": "solar",
+        "type":"int16",
+        "scale":10,
+        "unit":"KW/today"
+    },
+    "ac_output_l1": {
+        "address": 817,
+        "service": "system",
+        "type": "uint16",
+        "scale": 1,
+        "unit": "W"
+    },
+    "ac_input_genset_l1": {
+        "address": 823,
+        "service": "system",
+        "type": "int16",
+        "scale": 1,
+        "unit": "W"
+    }
+}

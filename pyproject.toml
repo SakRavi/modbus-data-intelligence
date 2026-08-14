@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "modbus-data-intelligence"
+version = "0.0.5"
+description = "Local platform for Modbus and Victron Cerbo GX data acquisition."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+
+dependencies = [
+    "PySide6==6.11.1",
+    "pymodbus==3.14.0",
+    "tqdm==4.70.0",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "src",
+    "src.*",
+    "logs",
+    "logs.*",
+]
+exclude = [
+    "tests",
+    "tests.*",
+    "docs",
+    "docs.*",
+    "config",
+    "config.*",
+]

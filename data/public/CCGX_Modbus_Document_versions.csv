@@ -1,0 +1,79 @@
+﻿Rev 0,Initial version
+Rev 1,Fixed numbering error: bmv state of charge and time to go both had id 266. Note that all bmv numbers higher than 266 have now been shifted one up!
+Rev 2,"The shift of rev 1 has been undone: no shifting. So set time to go to 301, and leave the rest as it was in rev 0"
+Rev 3,"Changed the unitids, because some PLCs do not accept a modbustcp unitd above than 247:"
+,,"VE-Bus port was 254, is now 246"
+,,"VE.Direct port 1 was 255, is now 247"
+,,"VE.Direct port 2 was 253, is now 245"
+,Added com.victronenergy.charger: Skylla-i. Requires CCGX v1.16 or higher.
+Rev 4,Added Hub4 parameters (preliminary!)
+,Added device instance 10 to 12
+,Changed scaling of all battery parameters that are related to Ah (consumed Ah for example) from 10 to -10
+Rev 5,Updated Hub4 registers (vebus)
+,Added grid meter (com.victronenergy.grid) including registers to control hub-4 control loop\
+,Added gps (com.victronenergt.gps)
+,Renamed DC D-Bus paths (eg. /Dc/0/V to /Dc/0/Voltage).
+,Changed scaling of solar charger daily yield (address 784)
+,Added Unit ID's for PV inverters
+Rev 6,Added Hub-4 setpoints for phase 2 and 3.
+Rev 7,Added battery state of health
+,Added solar charger user yield
+,Added unit IDs for Redflow and LG batteries
+Rev 8,Added CAN.Bus BMS battery parameters
+,Added UnitID 100 (maps to UnitID 0)
+,"Added system parameters (sum of all PV power, grid power,…)"
+,Added relays
+,Added vebus multi phase alarms
+,Added vebus Temperature & Voltage sensor alarms
+,Added hub4 BatteryLife state
+,Added PV inverter disable flag
+Rev 9,Added remarks column in field list
+,Added some helpful information on finding the unit ID
+,Added VE.Bus BMS paths
+Rev 10,Added remark that unit ID is also used for system device
+,Added VE.Direct inverters
+,Added Fisher Panda generators
+,Added tank sensors
+,Added ESS grid power setpoint with a smaller scale factor (allows setting power > 32kW)
+,Added Lynx Ion BMS.
+,,"Note that in systems with both a Lynx Ion shunt and Lynx Ion bms, there will be 2 battery services now. One of them will have device instance 0, the other 1. In older CCGX firmwares, both could have device instance 0. In that case the modbus TCP user will have to change the unit ID: use unit ID 1 for all battery registers < 1200 instead of ID 0."
+Rev 11,Renamed hub-4 to ESS is descriptions and remarks
+Rev 12,Added Unit IDs for Venus GX tty ports
+,Added temperature sensors
+,Added ESS minimum SoC
+Rev 13,Added active input source
+,Added voltage and current readings to grid servce
+,Added support for reading digital inputs
+Rev 14,"Put the system device on top, and removed references to unit-id 0 from the remarks of the com.victronenergy.system registers."
+Rev 15,Add ESS Mode 2 and 3 to the remarks of those registers
+,Some other small textual improvements.
+Rev 16,Added registers for battery alarms
+,Changed battery relay to be writeable (only works with some batteries).
+,Added LowCellVoltage alarm for Lynx batteries
+,Added VE.Bus temperature
+,Added VE.Bus reset
+Rev 17,Added registers for generator start/stop
+Rev 18,Added register for ESS mode
+,Added register for vebus phase rotation warning
+,Added register for solar charger’s MPP operation mode
+Rev 19,Added register for ESS mode 2 maximum discharge current
+,Added register for DVCC maximum system charge current
+Rev 20,Added 32-bit energy registers for PV-inverters
+Rev 21,Added registers for IMT solar irradiation sensors
+Rev 22,Moved 32-bit energy registers added in Rev-20 because they overlapped with the serial number
+Rev 23,Added register for GridLost alarm
+Rev 24,Added mapping for EasySolar-II/Multiplus-II GX VE.Bus port
+Rev 25,Added GPS Altitude
+Rev 26,Corrected Dbus path for generator ManualStart
+Rev 27,Add mappings for Cerbo GX ports
+Rev 28,Added mapping for EasySolar-II/Multiplus-II GX VE.Direct ports
+,Added mappings for up to 9 USB-connected VE.Direct devices
+,Added Octo-GX mappings
+Rev 29,GridLost alarm moved to the vebus service
+,Add register for maximum system grid feed in
+Rev 30,Added registers for AC-coupled and DC-coupled grid feed-in
+,Added register indicating whether Feed-in limiting is active
+,Added registers for feeding in overvoltage/excess DC-coupled power and limiting the amount
+,Added 32-bit register for generator runtime.
+Rev 31,Added additional registers for generator start/stop
+Rev 32,Corrected the allowed ranges for many of the registers

@@ -1,0 +1,47 @@
+{   "profiles":{
+        "battery_voltage": {
+            "min": 52.00,
+            "max": 54.40
+        },
+        "battery_current": {
+            "min": -15.0,
+            "max": 20.0
+        },
+        "battery_soc": {
+            "min": 30.0,
+            "max": 95.0
+        },
+        "charges_cycle": {
+            "min": 594,
+            "max": 594
+        },
+        "full_discharges": {
+            "min": 2,
+            "max": 2
+        },
+        "solar_voltage": {
+            "min": 90.0,
+            "max": 115.0
+        },
+        "solar_current": {
+            "min": 0.0,
+            "max": 12.0
+        },
+        "solar_power": {
+            "min": 0.0,
+            "max": 1300.0
+        },
+        "solar_yield": {
+            "min": 0.0,
+            "max": 10.0
+        },
+        "ac_output_l1": {
+            "min": 150.0,
+            "max": 800.0
+        },
+        "ac_input_genset_l1": {
+            "min": 0.0,
+            "max": 0.0
+        }
+    }
+}

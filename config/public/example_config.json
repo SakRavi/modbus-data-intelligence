@@ -1,6 +1,14 @@
 {
-    "ip_cerbo":"192.168.1.100",
-    "port_cerbo": 502,
-    "local_time": "Europe/Madrid",
-    "interval_seconds": 1.0
+    "modbus":{
+        "ip_cerbo":"192.168.1.100",
+        "port_cerbo": 502,
+        "local_time": "Europe/Madrid",
+        "interval_seconds": 1.0
+    },
+
+    "unit_ids":{
+        "battery":223,
+        "solar":215,
+        "system":100
+    }
 }
